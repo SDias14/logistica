@@ -1,0 +1,9 @@
+inicio - 27/02/2023 as 11:38
+
+1° passo - foi criado na raiz do projeto o arquivo composer.json que é um arquivo de configuração do composer.
+
+2° passo - foi colocado o composer no projeto por meio do cmd. Gerou as paginas lock que é para bloquear as versões e o vendor que é onde ficam as dependencias do projeto. 
+
+3°passo - foi criado uma pasta core , onde vai ficar as rotas do projeto.
+
+4°passo - criado um arquivo index.php que é o arquivo principal do projeto.
