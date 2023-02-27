@@ -6,4 +6,9 @@ inicio - 27/02/2023 as 11:38
 
 3°passo - foi criado uma pasta core , onde vai ficar as rotas do projeto.
 
-4°passo - criado um arquivo index.php que é o arquivo principal do projeto.
+4°passo - criado um arquivo index.php que é o arquivo principal do projeto e instanciar a classe Routes do pacote Core.
+
+5°passo - criado um arquivo .htaccess que é um arquivo de configuração do servidor para se trabalhar com urls amigaveis e rotas de forma mais simples.
+
+6°passo - limpar a url do site para se trabalhar com urls.
+

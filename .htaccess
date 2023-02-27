@@ -1,0 +1,13 @@
+RewriteEngine On 
+
+# permite a reescrita de url. 
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+# se o arquivo não existir, então é uma url amigável.
+RewriteCond %{REQUEST_FILENAME} !-d
+# se o diretório não existir, então é uma url amigável.
+RewriteCond %{REQUEST_FILENAME} !-l
+# se o link não existir, então é uma url amigável.
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+# reescreve a url para o index.php e passa o parâmetro r com o valor da url amigável.

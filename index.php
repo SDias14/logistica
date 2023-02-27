@@ -20,7 +20,7 @@
      * instanciando a classe Routes
      */
 
-    $routes = new \CORE\Routes();
+    $url = new \CORE\Routes();
 
 
 
