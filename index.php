@@ -22,6 +22,15 @@
 
     $url = new \CORE\Routes();
 
+    /**
+     * usando o metodo loadPage para carregar a página de controller. 
+     */
+
+    $url->loadPage();
+
+
+    
+
 
 
 
