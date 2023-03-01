@@ -31,8 +31,15 @@ class Home{
      */
     private array|string|null $data;
     public function index(){
+      
+        /**
+       * @var object $home - recebe o objeto da classe StsHome
+       * ponto de entrada do model StsHome
+       */
+        $home = new \Sts\model\StsHome();
+        $this->data = $home->index(); // instancia o metodo index da classe StsHome e armazena o retorno na variavel $this->data que tem um array de dados que vai ser enviado para a View. Ponto de saida
+         
 
-        $this->data = [];
 
         /**
          * @var object $loadView - recebe o objeto da classe ConfigView
