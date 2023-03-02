@@ -2,7 +2,7 @@
 
 
 namespace Sts\model;
-use Sts\model\helper\StsConn;
+
 
 /**
  * este if  vai verificar se a constante M7E3L8K9E5 foi definida
@@ -36,46 +36,33 @@ class StsHome{
  * objetivo : carregar os dados do banco de dados
  * @return array
  */
-    public function index(){
-        /**
-         * esse array recebe duas posições, uma com o titulo da página e outra com a descrição do serviço.
-         */
-      
-         /* $this->data = [
-            'title' => 'Home',
-            'description' => 'Home'
-            ];*/ 
+    public function index(){//ponto de saida do model
+    
 
-        $connect = new StsConn();  // criando um objeto da classe StsConn
-        
-        $this->connection = $connect->connectDb(); //instanciando o metodo connectDb() da classe StsConn e atribuindo o valor retornado para a variavel $this->connection
-
-        /**
-         * teste : var_dump($this->connection); //imprimindo o valor da variavel $this->connection para verificar se a conexao com o banco de dados foi realizada com sucesso. e esta retornando o valor da conexao.
-         */
-
-        /***@var string $queryHomeTop - recebe a query que vai ser executada no banco de dados*/
-
-        $queryHomeTop= "SELECT id, titleTop, descriptionTop, linkBtnTop, txtBtn, imageTop FROM home_top 
-        LIMIT 1";
-        
-        /***@var object $resultHomeTop - recebe o objeto da classe PDOStatement que vai preparar a query que está na variavel $queryHomeTop*/
-        $resultHomeTop = $this->connection->prepare($queryHomeTop);
-        
-        /***@var object $resultHomeTop - vai instanciar o metodo execute() da classe PDOStatement que vai executar a query que está na variavel $queryHomeTop*/
-        $resultHomeTop->execute();
-
-        /** @var $this->data - vai receber um array com os dados executados da query que está na variavel $queryHomeTop 
-         * @method fetch() - vai retornar um array com os dados da query
-         * @method fetchAll() - vai retornar um array com os dados da query
+        /*** @var object $viewHome - armazena o objeto da classe StsRead*/
+        $viewHome = new \Sts\model\helper\StsRead();
+        /*** @var string $table - armazena o nome da tabela que deve ser lida e envia para a função execRead no Helper StsRead
+         * ponto de entrada da stsRead
         */
+        $viewHome->execRead("home_top");
+        
+        /*** @var array $this->data - armazena o resultado da query preparada e executada. retorna um array , por isso posso colocar no atributo data.]
+        *ponto de entrada do model.
+        */
+        $this->data = $viewHome->getResult();
 
-         $this->data = $resultHomeTop->fetch(); // vai retornar um array com os dados da query
 
-         /** teste - var_dump( $this->data); // vai retornar um array com os dados da query*/
 
-         /**return - vai retornar um array com os dados da query e vai enviar para o controller*/
+        /**
+         * teste para ver se o atributo data está recebendo o retorno do metodo getResult em um array.
+         *var_dump($this->data);
+         */
+       
 
+
+      
+
+         
        return $this->data;
 
        
@@ -83,5 +70,6 @@ class StsHome{
 
 }
 
-
 ?>
+
+

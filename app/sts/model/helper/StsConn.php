@@ -21,7 +21,7 @@ if(!defined('M7E3L8K9E5')){
  * @author : samuel 
  */
 
-class StsConn{
+abstract class StsConn{
 
     /*** @var string $host - armazena o nome do host do banco de dados*/
     private string $host = HOST;
@@ -45,11 +45,11 @@ class StsConn{
      * @return object
      */
 
-  public function connectDb(){
+  public function connectDb(){//ponto de saida para o stsRead
         try{
             $this->conn = new \PDO("mysql:host=$this->host;dbname=$this->dbname;port=$this->port", $this->user, $this->pass);
             //echo "Conexão realizada com sucesso";
-            return $this->conn;
+            return $this->conn; 
 
         }catch(PDOException $e){
             die("Erro: Conexão com o banco não realizada. Contate o administrador do site: " . EMAILADM); // caso ocorra um erro na conexão com o banco de dados, será exibido uma mensagem de erro.

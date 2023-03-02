@@ -16,9 +16,11 @@ if(!defined('M7E3L8K9E5')){
         
         
         /**
-        * extract - extrai os dados do array $this->dataView e cria variaveis com o nome das chaves do array.
+        * extract - extrai os dados do array $this->dataView[0] e cria variaveis com o nome das chaves do array.
         */
-        extract($this->dataView); 
+
+        
+        extract($this->dataView[0]); //por que posição 0? porque está vindo de um array cujos dados estão na posição 0. ponto de entrada que vem do controller HOME.
         
         echo "<h1> Bem vindos à nossa Loja </h1>";
         
