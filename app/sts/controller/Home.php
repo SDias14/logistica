@@ -46,14 +46,14 @@ class Home{
          * @param object $loadView - primeiro parametro é o nome da página de View
          * @param object $loadView - segundo parametro é os dados da página de    View
          */
-        $loadView = new \CORE\ConfigView("sts/view/home/home", $this->data); //ponto de saida para a view
+     $loadView = new \CORE\ConfigView("sts/view/home/home", $this->data); //ponto de saida para a view
 
       /**
        * depois da instancia de ConfigView, chama o metodo renderView
        * @method renderView - carrega a página de View
        */
 
-       $loadView->renderView();
+     $loadView->renderView();
 
     }
 

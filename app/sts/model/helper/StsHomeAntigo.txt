@@ -52,3 +52,9 @@
          /** teste - var_dump( $this->data); // vai retornar um array com os dados da query*/
 
          /**return - vai retornar um array com os dados da query e vai enviar para o controller*/
+
+
+
+bindparam - recebe uma referencia de uma variavel e vincula a uma variavel da query
+
+bindvalue - recebe um valor e vincula a uma variavel da query

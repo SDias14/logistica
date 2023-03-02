@@ -18,11 +18,16 @@ if(!defined('M7E3L8K9E5')){
         /**
         * extract - extrai os dados do array $this->dataView[0] e cria variaveis com o nome das chaves do array.
         */
+        echo "<h1> Bem vindos à nossa Loja </h1>";
 
         
+
+        if(!empty($this->dataView[0])){ //verifica se o array $this->dataView[0] não está vazio
+
+                  
         extract($this->dataView[0]); //por que posição 0? porque está vindo de um array cujos dados estão na posição 0. ponto de entrada que vem do controller HOME.
         
-        echo "<h1> Bem vindos à nossa Loja </h1>";
+       
         
         /**
         * 1°echo - imprime o titulo da pagina
@@ -40,13 +45,19 @@ if(!defined('M7E3L8K9E5')){
         * @var $linkBtnTop - é o nome da chave do array $this->dataView
         * @var $txtBtn - é o nome da chave do array $this->dataView
         */
-        echo "<button><a href='$linkBtnTop'>$txtBtn</a></button>";
+        echo "<button><a href='$linkBtnTop'>$txtBtn</a></button><br><br>";
         
         /**
         * 4°echo - imprime a imagem
         * @var $imageTop - é o nome da chave do array $this->dataView
         */
         echo "<img src='".URL."assets/img/home/$imageTop' alt='img'>";
+              
+        }else{
+                echo "Ops! Não foi possível carregar os dados da página Home.";
+        }
+
+      
         
 }
 

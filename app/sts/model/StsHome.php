@@ -42,10 +42,11 @@ class StsHome{
         /*** @var object $viewHome - armazena o objeto da classe StsRead*/
         $viewHome = new \Sts\model\helper\StsRead();
         /*** @var string $table - armazena o nome da tabela que deve ser lida e envia para a função execRead no Helper StsRead
+         * 
          * ponto de entrada da stsRead
         */
-        $viewHome->execRead("home_top");
-        
+        //$viewHome->execRead("home_top", "WHERE id=:id LIMIT :limit", "id=1&limit=1");
+        $viewHome->fullRead("SELECT id, titleTop, descriptionTop,linkBtnTop,txtBtn,imageTop FROM home_top WHERE id=:id LIMIT :limit", "id=1&limit=1");
         /*** @var array $this->data - armazena o resultado da query preparada e executada. retorna um array , por isso posso colocar no atributo data.]
         *ponto de entrada do model.
         */
@@ -58,6 +59,7 @@ class StsHome{
          *var_dump($this->data);
          */
        
+        
 
 
       
